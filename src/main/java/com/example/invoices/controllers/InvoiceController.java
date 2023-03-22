@@ -46,17 +46,17 @@ public class InvoiceController extends RuntimeException {
     public void deleteInvoice(@PathVariable int id) {
         invoiceService.deleteInvoice(id);
     }
-    @GetMapping(value = "/clientName")
+    @GetMapping(value = "/filter/clientName")
     public List<InvoiceResponse> filterInvoiceByClientName(@RequestBody InvoiceFilterClientNameRequest invoiceFilter) {
         return invoiceService.filterInvoiceByClientName(invoiceFilter);
     }
 
-    @GetMapping(value = "/creationDate")
+    @GetMapping(value = "/filter/creationDate")
     public List<InvoiceResponse> filterInvoiceByCreationDate(@RequestBody InvoiceFilterCreationDateRequest invoiceFilter) {
         return invoiceService.filterInvoiceByCreationDate(invoiceFilter);
     }
 
-    @GetMapping(value = "/lastModified")
+    @GetMapping(value = "/filter/lastModified")
     public InvoiceResponse filterInvoiceByLastModified() {
         return invoiceService.filterInvoiceByLastModified();
     }
